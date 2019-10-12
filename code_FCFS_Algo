@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n,t,flag=0,k=0;
+	cout<<"Enter number of pages requested get into Main memory"<<endl;
+	cin>>n;
+	cout<<"Enter number of frames in Main memory"<<endl;
+	cin>>t;
+	int a[n],b[t];
+	cout<<"Enter the page number coming in order"<<endl;
+	for(int i=n;i>0;i--)
+	{
+		cin>>a[i];
+	}
+	for(int i=n;i>n-t;i--)
+	{	
+		for(int j=0;j<t;j++)
+		{
+			if(a[i]==a[i-j-1])
+			{
+				flag=45;
+				k++;
+				break;
+			}
+		}
+		if(flag!=45)
+		{
+			b[i]=a[i];
+		}
+		else
+		{
+			
+		}
+		flag=0;
+	}
+	for(int i=n;i>n-t;i--)
+	{
+		cout<<b[i]<<endl;
+	}
+	return 0;	
+}
